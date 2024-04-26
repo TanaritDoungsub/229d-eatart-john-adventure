@@ -24,7 +24,6 @@ public class PlayerControl : MonoBehaviour
     private void FixedUpdate()
     {
         rd2D.AddForce(move * moveSpeed);
-
     }
 
 }
