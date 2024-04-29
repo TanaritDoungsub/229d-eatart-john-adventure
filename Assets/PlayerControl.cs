@@ -8,6 +8,7 @@ public class PlayerControl : MonoBehaviour
     private Rigidbody2D rd2D;
     private Vector2 move;
     public float moveSpeed = 100f;
+    public CoinManager cm;
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +25,15 @@ public class PlayerControl : MonoBehaviour
     private void FixedUpdate()
     {
         rd2D.AddForce(move * moveSpeed);
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Coin"))
+        {
+            Destroy(other.gameObject);
+            cm.coin++;
+        }
     }
 
 }
