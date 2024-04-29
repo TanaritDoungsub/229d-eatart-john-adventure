@@ -3,8 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Mianmeus : MonoBehaviour
+public class ButtonMainmanu : MonoBehaviour
 {
+    public void Home()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
     public void PlayGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
@@ -12,12 +16,12 @@ public class Mianmeus : MonoBehaviour
 
     public void QuitGame()
     {
-        Debug.Log("QUIT");
+        Debug.Log("QUIT!");
         Application.Quit();
     }
 
-    public void Manu()
+    public void ExitButton()
     {
-        SceneManager.LoadScene("Manu");
+        SceneManager.LoadScene("MainMenu");
     }
 }
